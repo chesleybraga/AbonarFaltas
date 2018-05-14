@@ -3,6 +3,6 @@ Projeto desenvolvido pela Equipe "I" para a Disciplina "Programação Orientada 
 
 Membros da Equipe "I":
   - Anderson Pinho
-  - Carlos a. Matias
+  - Carlos A. Matias
   - Chesley Braga
   - Ivan Junior
