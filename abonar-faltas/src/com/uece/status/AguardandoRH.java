@@ -22,7 +22,12 @@ public class AguardandoRH implements IStatus {
     
     @Override
     public void retornar(String motivo) {
-	// TODO implementar
-	throw new UnsupportedOperationException("Not supported yet.");
+	if (motivo == null) || motivo.isEmpty()
+        {
+            throw new IllegalArgumentException("Motivo inválido");
+
+        }
+        solicitacao.setMotivo(motivo);
+	    solicitacao status = new AguardandoChefia()
     }
 }
