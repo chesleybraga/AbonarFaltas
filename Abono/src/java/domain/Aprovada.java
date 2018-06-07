@@ -33,6 +33,8 @@ public class Aprovada extends Status {
     
     @Override
     public void retornar(String motivo) {
-	throw new IllegalStateException("Solicitação não pode ser retornada.");
+        motivo = "desfazendo";
+        solicitacao.setMotivo(motivo);
+        solicitacao.setStatus(new AguardandoChefia());
     }
 }
