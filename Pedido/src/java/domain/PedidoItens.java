@@ -27,38 +27,56 @@ public class PedidoItens implements Serializable {
 
     @Column(precision = 4)
     private double total;
+    
+    public Integer getId() {
+        return id;
+    }
 
-    Produto getProduto() {
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Pedido getPedido() {
+        return this.pedido;
+    }
+
+    public void setPedido(Pedido value) {
+        this.pedido = value;
+    }
+    
+    public Produto getProduto() {
         return this.produto;
     }
 
-    void setProduto(Produto value) {
+    public void setProduto(Produto value) {
         this.produto = value;
     }
 
-    int getQuantidade() {
+    public int getQuantidade() {
         return this.quantidade;
     }
 
-    void setQuantidade(int value) {
+    public void setQuantidade(int value) {
         this.quantidade = value;
     }
 
-    double getPreco() {
+    public double getPreco() {
         return this.preco;
     }
 
-    void setPreco(double value) {
+    public void setPreco(double value) {
         this.preco = value;
     }
 
-    double getTotal() {
+    public double getTotal() {
         if (this.quantidade > 0) {
             this.total = this.quantidade * this.preco;
-        } else {
-            this.total = 0;
         }
+        
         return this.total;
     }
-
+    
+    public void setTotal(double value) {
+        this.total = value;
+    }
 }

@@ -14,15 +14,9 @@ import javax.persistence.Version;
 @Views(
         @View(name = "Clientes",
                 title = "Clientes",
-                filters = "nome;"
-                + "cnpj;"
-                + "cidade;"
-                + "uf",
-             members = "[id;nome;cnpj;"
-                + "Endereco[cidade;"
-                + "         uf]"
-                + "]",
-             template = "@CRUD_PAGE+@FILTER"
+                filters = "nome;cnpj;cidade;uf",
+                members = "[id;nome;cnpj;Endereco[cidade;uf]]",
+                template = "@CRUD_PAGE+@FILTER"
         ))
 public class Cliente implements Serializable {
 
@@ -57,32 +51,32 @@ public class Cliente implements Serializable {
         return this.nome;
     }
 
-    void setNome(String value) {
+    public void setNome(String value) {
         this.nome = value;
     }
 
-    String getCnpj() {
+    public String getCnpj() {
         return this.cnpj;
     }
 
-    void setCnpj(String value) {
+    public void setCnpj(String value) {
         this.cnpj = value;
     }
 
-    String getUf() {
-        return this.uf;
-    }
-
-    void setUf(String value) {
-        this.uf = value;
-    }
-
-    String getCidade() {
+    public String getCidade() {
         return this.cidade;
     }
 
-    void setCidade(String value) {
+    public void setCidade(String value) {
         this.cidade = value;
+    }
+    
+    public String getUf() {
+        return this.uf;
+    }
+
+    public void setUf(String value) {
+        this.uf = value;
     }
 
     public Timestamp getVersao() {
@@ -97,6 +91,4 @@ public class Cliente implements Serializable {
     public String toString() {
         return nome;
     }
-
- 
 }

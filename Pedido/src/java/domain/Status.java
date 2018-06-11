@@ -8,6 +8,7 @@ import javax.persistence.Transient;
 
 @Entity
 public abstract class Status implements Serializable{
+    
     @Id
     private Integer id;
 
@@ -18,14 +19,13 @@ public abstract class Status implements Serializable{
     Pedido pedido;
 
     public abstract void Aceita();
+    
     public abstract void Paga();
+    
     public abstract void Cancela(String motivo);
 
     @Override
     public String toString() {
         return "Status" + descricao;
     }
-    
-    
-
 }

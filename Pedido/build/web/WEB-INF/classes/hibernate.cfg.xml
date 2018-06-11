@@ -6,6 +6,17 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">false</property>
-        <property name="hibernate.format_sql">true</property>        
+        <property name="hibernate.format_sql">true</property>
+        <mapping class="domain.Cliente"/>
+        <mapping class="domain.Pedido"/>
+        <mapping class="domain.PedidoItens"/>
+        <mapping class="domain.Produto"/>
+        <mapping class="domain.Status"/>
+        <mapping class="domain.StatusAceito"/>
+        <mapping class="domain.StatusCancelado"/>
+        <mapping class="domain.StatusNovo"/>
+        <mapping class="domain.StatusPago"/>
+        <mapping class="domain.Usuario"/>
+        <mapping class="domain.Vendedor"/>
     </session-factory>
 </hibernate-configuration>

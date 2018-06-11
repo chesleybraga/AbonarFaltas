@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
-public class Vendedor implements Serializable{
+public class Vendedor implements Serializable {
 
     @Id @GeneratedValue
     private Integer id;
@@ -40,5 +40,4 @@ public class Vendedor implements Serializable{
     public String toString() {
         return nome;
     }
-    
 }

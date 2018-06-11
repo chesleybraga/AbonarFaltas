@@ -15,7 +15,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Pedido implements Serializable{
+public class Pedido implements Serializable {
 
     @Id @GeneratedValue
     private Integer id;
@@ -28,9 +28,6 @@ public class Pedido implements Serializable{
 
     private Status status;
 
-    @OneToMany(mappedBy = "pedido")
-    private List<PedidoItens> pedidoItens = new ArrayList<PedidoItens>();
-
     @Temporal(TemporalType.DATE)
     private Date dataVenda;
     
@@ -39,70 +36,10 @@ public class Pedido implements Serializable{
 
     @ManyToOne(optional = false)
     private Vendedor vendedor;
-
-    int getNumero() {
-
-        return this.numero;
-    }
-
-    void setNumero(int value) {
-
-        this.numero = value;
-    }
-
-    double getValor() {
-
-        return this.valor;
-    }
-
-    void setValor(double value) {
-
-        this.valor = value;
-    }
-
-    public void cadastrar() {
-    }
-
-    Status getStatus() {
-
-        return this.status;
-    }
-
-    void setStatus(Status value) {
-
-        this.status = value;
-    }
-
-    Date getDataVenda() {
-
-        return this.dataVenda;
-    }
-
-    void setDataVenda(Date value) {
-
-        this.dataVenda = value;
-    }
-
-    Cliente getCliente() {
-
-        return this.cliente;
-    }
-
-    void setCliente(Cliente value) {
-
-        this.cliente = value;
-    }
-
-    Vendedor getVendedor() {
-
-        return this.vendedor;
-    }
-
-    void setVendedor(Vendedor value) {
-
-        this.vendedor = value;
-    }
-
+    
+    @OneToMany(mappedBy = "pedido")
+    private List<PedidoItens> pedidoItens = new ArrayList<PedidoItens>();
+    
     public Integer getId() {
         return id;
     }
@@ -111,11 +48,68 @@ public class Pedido implements Serializable{
         this.id = id;
     }
 
+    public Integer getNumero() {
+        return this.numero;
+    }
+
+    public void setNumero(Integer value) {
+        this.numero = value;
+    }
+
+    public double getValor() {
+        return this.valor;
+    }
+
+    public void setValor(double value) {
+        this.valor = value;
+    }
+
+    public Status getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(Status value) {
+        this.status = value;
+    }
+   
+    public Date getDataVenda() {
+        return this.dataVenda;
+    }
+
+    public void setDataVenda(Date value) {
+        this.dataVenda = value;
+    }
+
+    public Cliente getCliente() {
+        return this.cliente;
+    }
+
+    public void setCliente(Cliente value) {
+        this.cliente = value;
+    }
+
+    public Vendedor getVendedor() {
+        return this.vendedor;
+    }
+
+    public void setVendedor(Vendedor value) {
+        this.vendedor = value;
+    }
+    
+    public List<PedidoItens> getPedidoItens() {
+        return this.pedidoItens;
+    }
+
+    public void setPedidoItens(List<PedidoItens> value) {
+        this.pedidoItens = value;
+    }
+    
+    public void cadastrar() {
+        
+    }
+
     @Override
     public String toString() {
         return numero + " - " + cliente.getNome();
     }
-    
-    
-
 }

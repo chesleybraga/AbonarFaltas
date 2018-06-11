@@ -42,7 +42,37 @@ public class Usuario implements Serializable {
     @UserRoles
     @Enumerated(EnumType.STRING)
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<Role> roles = new ArrayList<Role>();
+    private List<Role> roles = new ArrayList<Role>(); 
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
     
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
 }
