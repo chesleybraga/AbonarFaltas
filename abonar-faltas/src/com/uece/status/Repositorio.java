@@ -4,7 +4,6 @@ public class Repositorio implements IRepository{
 
     final static private IRepository repositorio = new Repositorio();
 
-
     private Repositorio(){
 
     }
@@ -12,7 +11,6 @@ public class Repositorio implements IRepository{
     static public IRepository getInstance(){
         return repositorio;
     }
-
 
     @Override
     public IRepository add(Object instance) {

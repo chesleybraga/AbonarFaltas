@@ -4,9 +4,7 @@ public class NovaSolicitacao extends Status {
 
     @Override
     public void solicitar() {
-
         solicitacao.status = new AguardandoChefia();
-
     }
 
     @Override

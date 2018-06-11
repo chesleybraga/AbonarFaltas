@@ -8,6 +8,5 @@ public interface IRepository {
 
     <T> T get(Class<T> instance);
 
-
     void persistAll();
 }

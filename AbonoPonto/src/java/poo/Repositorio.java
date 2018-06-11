@@ -2,6 +2,6 @@ package poo;
 
 import entities.Repository;
         
-public class Repositorio extends Repository{
+public class Repositorio extends Repository {
 
 }

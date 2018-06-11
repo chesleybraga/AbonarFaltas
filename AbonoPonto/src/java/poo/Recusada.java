@@ -11,14 +11,14 @@ public class Recusada extends Status {
         Repositorio.save(this);
     }
 
-    Recusada(Solicitacao solicitacao) {
+    public Recusada(Solicitacao solicitacao) {
         this();
         this.solicitacao = solicitacao;
     }
 
     @Override
     public void solicitar() {
-        throw new IllegalStateException("Esta solicitação não pode ser reiniciada.");
+        throw new IllegalStateException("Esta solicitação não pode ser solicitada.");
     }
     
     @Override
@@ -38,6 +38,6 @@ public class Recusada extends Status {
 
     @Override
     public void pagar() {
-        throw new IllegalStateException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new IllegalStateException("Not supported yet.");
     }
 }

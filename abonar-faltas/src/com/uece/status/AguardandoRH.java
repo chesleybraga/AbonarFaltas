@@ -22,11 +22,9 @@ public class AguardandoRH implements IStatus {
     
     @Override
     public void retornar(String motivo) {
-	if (motivo == null) || motivo.isEmpty()
-        {
-            throw new IllegalArgumentException("Motivo inválido");
-
-        }
+	if (motivo == null) || motivo.isEmpty() {
+        throw new IllegalArgumentException("Motivo inválido");
+    }
         solicitacao.setMotivo(motivo);
 	    solicitacao status = new AguardandoChefia()
     }

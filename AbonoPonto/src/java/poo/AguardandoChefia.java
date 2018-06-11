@@ -11,7 +11,7 @@ public class AguardandoChefia extends Status {
         Repositorio.save(this);
     }
 
-    AguardandoChefia(Solicitacao solicitacao) {
+    public AguardandoChefia(Solicitacao solicitacao) {
         this();
         this.solicitacao = solicitacao;
     }

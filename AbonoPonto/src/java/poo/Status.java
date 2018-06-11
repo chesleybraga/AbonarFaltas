@@ -56,16 +56,21 @@ public abstract class Status implements Serializable{
         if (obj == null) {
             return false;
         }
+		
         if (getClass() != obj.getClass()) {
             return false;
         }
+		
         final Status other = (Status) obj;
-        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+        
+		if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
             return false;
         }
+		
         if ((this.descricao == null) ? (other.descricao != null) : !this.descricao.equals(other.descricao)) {
             return false;
         }
+		
         return true;
     }
 
@@ -74,13 +79,12 @@ public abstract class Status implements Serializable{
         int hash = 7;
         hash = 11 * hash + (this.id != null ? this.id.hashCode() : 0);
         hash = 11 * hash + (this.descricao != null ? this.descricao.hashCode() : 0);
-        return hash;
+        
+		return hash;
     }
 
     @Override
     public String toString() {
-        //return this.id == null ? "<Novo>" : descricao;
         return descricao;
-    }
-    
+    }   
 }

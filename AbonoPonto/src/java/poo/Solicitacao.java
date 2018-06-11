@@ -78,11 +78,11 @@ public class Solicitacao implements Serializable {
     private TipoEvento tipoEvento;
 
     public Solicitacao() {
+        
     }
 
     @ActionDescriptor(refreshView = true)
     public String solicita() {
-
         if (tipoEvento == TipoEvento.AtestadoMedico) {
             status.setSolicitacao(this).aprovar();
         } else if (tipoEvento == TipoEvento.ProblemaPonto) {
@@ -90,9 +90,10 @@ public class Solicitacao implements Serializable {
         } else {
             status.setSolicitacao(this).solicitar();
         }
-        status.setSolicitacao(this).solicitar();
+        
         Repositorio.getInstance().add(this);
         Repositorio.getInstance().persistAll();
+        
         return "Solicitação criada com sucesso";
     }
 
@@ -123,22 +124,6 @@ public class Solicitacao implements Serializable {
         status.setSolicitacao(this).pagar();
         Repositorio.getInstance().add(this);
         Repositorio.getInstance().persistAll();
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public String getMotivo() {
-        return motivo;
-    }
-
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
     }
 
     public Integer getId() {
@@ -173,12 +158,28 @@ public class Solicitacao implements Serializable {
         this.termino = termino;
     }
 
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
     public String getObservacao() {
         return observacao;
     }
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public Timestamp getVersao() {
@@ -196,5 +197,4 @@ public class Solicitacao implements Serializable {
     public void setTipoEvento(TipoEvento tipoEvento) {
         this.tipoEvento = tipoEvento;
     }
-
 }
