@@ -10,14 +10,14 @@ public class AguardandoRH extends Status {
         this.setDescricao("AguardandoRH");
     }
     
-    AguardandoRH(Solicitacao solicitacao) {
+    public AguardandoRH(Solicitacao solicitacao) {
         this();
         this.solicitacao = solicitacao;
     }
     
     @Override
     public void solicitar() {
-	throw new IllegalStateException("Solicitação não pode ser retornada.");
+	throw new IllegalStateException("Solicitação não pode ser solicitada.");
     }
 
     @Override
@@ -35,6 +35,7 @@ public class AguardandoRH extends Status {
         if (motivo == null) {
             throw new IllegalArgumentException("Motivo inválido");
         }
+		
         solicitacao.setMotivo(motivo);
         solicitacao.setStatus(new AguardandoChefia());
     }

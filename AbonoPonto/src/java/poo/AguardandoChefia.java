@@ -8,7 +8,6 @@ public class AguardandoChefia extends Status {
     public AguardandoChefia() {
         this.setId(2);
         this.setDescricao("AguardandoChefia");
-        Repositorio.save(this);
     }
 
     public AguardandoChefia(Solicitacao solicitacao) {

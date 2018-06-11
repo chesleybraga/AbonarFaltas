@@ -2,7 +2,6 @@ package domain;
 
 import javax.persistence.Entity;
 
-
 @Entity
 public class AguardandoChefia extends Status {
 
@@ -11,7 +10,7 @@ public class AguardandoChefia extends Status {
         this.setDescricao("AguardandoChefia");
     }
     
-    AguardandoChefia(Solicitacao solicitacao) {
+    public AguardandoChefia(Solicitacao solicitacao) {
         this();
         this.solicitacao = solicitacao;
     }

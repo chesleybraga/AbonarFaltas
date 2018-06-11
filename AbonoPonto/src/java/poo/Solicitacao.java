@@ -43,6 +43,14 @@ public class Solicitacao implements Serializable {
         Aservico, AtestadoMedico, Licenca, ProblemaPonto, Outros
     }
 
+ static {
+     Repositorio.save(new NovaSolicitacao());
+     Repositorio.save(new AguardandoChefia());
+     Repositorio.save(new AguardandoRH());
+     Repositorio.save(new Aprovada());
+     Repositorio.save(new Recusada());
+ }
+     
     @Id
     @GeneratedValue
     private Integer id;
@@ -67,7 +75,7 @@ public class Solicitacao implements Serializable {
     private String observacao;
 
     @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private Status status = new NovaSolicitacao();
 
     @Version
@@ -83,9 +91,7 @@ public class Solicitacao implements Serializable {
 
     @ActionDescriptor(refreshView = true)
     public String solicita() {
-        if (tipoEvento == TipoEvento.AtestadoMedico) {
-            status.setSolicitacao(this).aprovar();
-        } else if (tipoEvento == TipoEvento.ProblemaPonto) {
+        if ((tipoEvento == TipoEvento.AtestadoMedico) || (tipoEvento == TipoEvento.ProblemaPonto)) {
             status.setSolicitacao(this).aprovar();
         } else {
             status.setSolicitacao(this).solicitar();

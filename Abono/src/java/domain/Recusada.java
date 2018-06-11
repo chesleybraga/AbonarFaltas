@@ -10,14 +10,14 @@ public class Recusada extends Status {
         this.setDescricao("Recusada");
     }
 
-    Recusada(Solicitacao solicitacao) {
+    public Recusada(Solicitacao solicitacao) {
         this();
         this.solicitacao = solicitacao;
     }
 
     @Override
     public void solicitar() {
-        throw new IllegalStateException("Esta solicitação não pode ser reiniciada.");
+        throw new IllegalStateException("Esta solicitação não pode ser solicitada.");
     }
     
     @Override

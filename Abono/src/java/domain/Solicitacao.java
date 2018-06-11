@@ -63,7 +63,6 @@ public class Solicitacao implements Serializable {
     public enum TipoEvento {
         Aservico, AtestadoMedico, Licenca, ProblemaPonto, Outros
     }
-
        
  static {
      Repositorio.save(new NovaSolicitacao());
@@ -71,7 +70,6 @@ public class Solicitacao implements Serializable {
      Repositorio.save(new AguardandoRH());
      Repositorio.save(new Aprovada());
      Repositorio.save(new Recusada());
-     
  }
      
     @Id
@@ -108,20 +106,20 @@ public class Solicitacao implements Serializable {
     private TipoEvento tipoEvento;
 
     public Solicitacao() {
-    }
 
+    }
     
     @ActionDescriptor(refreshView = true)
     public String solicitar() {
-//        
 //        if (tipoEvento.contains(AtestadoMedico) || tipoEvento.contains(ProblemaPonto)) {
 //            status.setSolicitacao(this).aprovar();
 //        } else {
 //            status.setSolicitacao(this).solicitar();
 //        }
-//        status.setSolicitacao(this).solicitar();
+        
 //        Repositorio.getInstance().add(this);
 //        Repositorio.getInstance().persistAll();
+        
         return "Solicitação criada com sucesso";
     }
 
@@ -145,22 +143,6 @@ public class Solicitacao implements Serializable {
         status.setSolicitacao(this).retornar(motivo);
         Repositorio.getInstance().add(this);
         Repositorio.getInstance().persistAll();
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public String getMotivo() {
-        return motivo;
-    }
-
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
     }
 
     public Integer getId() {
@@ -195,12 +177,28 @@ public class Solicitacao implements Serializable {
         this.termino = termino;
     }
 
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
     public String getObservacao() {
         return observacao;
     }
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public Timestamp getVersao() {
@@ -218,6 +216,4 @@ public class Solicitacao implements Serializable {
     public void setTipoEvento(TipoEvento tipoEvento) {
         this.tipoEvento = tipoEvento;
     }
-
-
 }

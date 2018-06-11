@@ -2,7 +2,6 @@ package domain;
 
 import javax.persistence.Entity;
 
-
 @Entity
 public class Aprovada extends Status {
     
@@ -11,7 +10,7 @@ public class Aprovada extends Status {
         this.setDescricao("Aprovada");
     }
     
-    Aprovada(Solicitacao solicitacao) {
+    public Aprovada(Solicitacao solicitacao) {
         this();
         this.solicitacao = solicitacao;
     }
@@ -33,7 +32,6 @@ public class Aprovada extends Status {
     
     @Override
     public void retornar(String motivo) {
-        motivo = "desfazendo";
         solicitacao.setMotivo(motivo);
         solicitacao.setStatus(new AguardandoChefia());
     }

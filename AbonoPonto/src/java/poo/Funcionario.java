@@ -7,7 +7,6 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CPF;
 
 @Data
-//@EqualsAndHashCode(callSuper = false)
 @Entity
 public class Funcionario implements Serializable {
 
@@ -25,6 +24,6 @@ public class Funcionario implements Serializable {
 
     @Override
     public String toString() {
-        return nome;
+        return nome + " cpf=" + cpf;
     }
 }

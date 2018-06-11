@@ -8,7 +8,6 @@ public class Recusada extends Status {
     public Recusada() {
         this.setId(5);
         this.setDescricao("Recusada");
-        Repositorio.save(this);
     }
 
     public Recusada(Solicitacao solicitacao) {

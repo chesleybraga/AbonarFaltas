@@ -8,7 +8,6 @@ public class AguardandoRH extends Status {
     public AguardandoRH() {
         this.setId(3);
         this.setDescricao("AguardandoRH");
-        Repositorio.save(this);
     }
     
     public AguardandoRH(Solicitacao solicitacao) {
@@ -43,6 +42,6 @@ public class AguardandoRH extends Status {
 
     @Override
     public void pagar() {
-        solicitacao.setStatus(new Aprovada());
+        throw new IllegalStateException("Not supported yet.");
     }
 }

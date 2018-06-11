@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <session-factory>
+    <session-factory>
     <property name="hibernate.connection.datasource">java:comp/env/jdbc/datasource</property>
-    <property name="hibernate.current_session_context_class">thread</property>
-    <property name="hibernate.hbm2ddl.auto">update</property>
-    <property name="hibernate.show_sql">false</property>
-    <property name="hibernate.format_sql">true</property>
-  </session-factory>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.format_sql">true</property>  
+        <mapping class="poo.NovaSolicitacao"/> 
+        <mapping class="poo.AguardandoChefia"/> 
+        <mapping class="poo.AguardandoRH"/> 
+        <mapping class="poo.Aprovada"/> 
+        <mapping class="poo.Recusada"/> 
+        <mapping class="poo.Solicitacao"/> 
+        <mapping class="poo.Funcionario"/> 
+        <mapping class="poo.Repositorio"/> 
+        <mapping class="poo.Status"/> 
+    </session-factory>
 </hibernate-configuration>

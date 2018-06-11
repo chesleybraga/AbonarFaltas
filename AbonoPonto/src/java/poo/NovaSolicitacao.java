@@ -47,6 +47,6 @@ public class NovaSolicitacao extends Status {
 
     @Override
     public void pagar() {
-        throw new IllegalStateException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new IllegalStateException("Not supported yet.");
     }
 }

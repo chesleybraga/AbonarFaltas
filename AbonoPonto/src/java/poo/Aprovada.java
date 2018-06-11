@@ -8,7 +8,6 @@ public class Aprovada extends Status {
     public Aprovada() {
         this.setId(4);
         this.setDescricao("Aprovada");
-        Repositorio.save(this);
     }
     
     public Aprovada(Solicitacao solicitacao) {
